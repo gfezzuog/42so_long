@@ -6,13 +6,13 @@
 #    By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 17:28:37 by gfezzuog          #+#    #+#              #
-#    Updated: 2022/10/21 17:46:53 by gfezzuog         ###   ########.fr        #
+#    Updated: 2022/10/26 17:40:26 by gfezzuog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRC = so_long.c \
+SRC = ft_matrix.c \
 
 
 HDRS = libft.h
@@ -22,11 +22,12 @@ OBJ = $(SRC:.c=.o)
 RM = rm -f
 
 %.o: %.c
-	gcc -Wall -Wextra -Werror -Imlx -I ${HDRS} -c $< -o $@
+	gcc -g -Wall -Wextra -Werror -Imlx -I ${HDRS} -c $< -o $@
 
 $(NAME): $(OBJ)
+	make -C ./libft/ all
 	make -C ./mlx/
-	gcc $(OBJ) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	gcc $(OBJ) -Lmlx -lmlx -framework OpenGL -framework AppKit ./libft/libft.a -o $(NAME)
 
 all: $(NAME)
 
