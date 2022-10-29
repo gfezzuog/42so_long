@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:48:07 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/10/29 14:43:37 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/10/29 16:12:39 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int	ft_lastpillar(t_map map)
 	}
 	return (1);
 }
-
 
 int	ft_mapchecker(t_map map)
 {

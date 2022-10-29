@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:59:45 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/10/29 14:41:22 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/10/29 16:15:30 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 typedef struct s_map
 {
 	char	**map;
-	char	*mapname;
+	int		rows;
+	int		cols;
 	int		length;
 	int		height;
 }	t_map;
