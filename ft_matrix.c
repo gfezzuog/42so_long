@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:33:36 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/10/26 18:08:07 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/10/29 14:48:17 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,21 @@ int	main(int argc, char **argv)
 
 	map.length = 0;
 	map.height = 0;
+	printf("%s\n", argv[1]);
 	if (argc != 2)
 	{
 		printf("Error: Wrong number of arguments\n");
 		return (0);
 	}
 	map.map = ft_create_matrix(argv[1]);
-	// while (map.map[map.height][map.length])
+	//ft_mapchecker(map);
+	// while (map.map[map.height])
 	// {
 	// 	while (map.map[map.height][map.length])
 	// 	{
 	// 		printf("%c", map.map[map.height][map.length]);
 	// 		map.length++;
 	// 	}
-	// 	printf("\n");
 	// 	map.length = 0;
 	// 	map.height++;
 	// }

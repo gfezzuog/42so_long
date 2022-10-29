@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:59:45 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/10/26 17:15:38 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/10/29 14:41:22 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 # include "./libft/includes/get_next_line.h"
 # include "./libft/includes/ft_printf.h"
 
+
 typedef struct s_map
 {
 	char	**map;
+	char	*mapname;
 	int		length;
 	int		height;
 }	t_map;
@@ -37,10 +39,14 @@ typedef struct s_image
 	char		*pixels;
 	int			bits_per_pixel;
 	int			line_length;
-	int 		endian;
+	int			endian;
 }	t_image;
 
-int main(int argc, char **argv);
-char **ft_create_matrix(char *string);
+int		main(int argc, char **argv);
+char	**ft_create_matrix(char *string);
+int		ft_mapchecker(t_map map);
+int		ft_pillarlen(char **matrix);
+int		ft_rowlen(char **matrix);
+int		ft_count_rows(char *string);
 
 #endif

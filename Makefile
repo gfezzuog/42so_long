@@ -6,13 +6,15 @@
 #    By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 17:28:37 by gfezzuog          #+#    #+#              #
-#    Updated: 2022/10/26 17:40:26 by gfezzuog         ###   ########.fr        #
+#    Updated: 2022/10/29 14:05:22 by gfezzuog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRC = ft_matrix.c \
+	  ft_mapchecker.c \
+	  ft_countinglen.c \
 
 
 HDRS = libft.h
