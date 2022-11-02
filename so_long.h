@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:59:45 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/10/29 16:15:30 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:07:09 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,11 @@ typedef struct s_image
 }	t_image;
 
 int		main(int argc, char **argv);
-char	**ft_create_matrix(char *string);
+char	**ft_create_matrix(char *string, t_map map);
 int		ft_mapchecker(t_map map);
-int		ft_pillarlen(char **matrix);
-int		ft_rowlen(char **matrix);
+int		ft_strlengnl(char *string);
 int		ft_count_rows(char *string);
-
+int		ft_rightlength(t_map map);
+int		ft_rightheight(t_map map);
+int		ft_rightobj(t_map map);
 #endif

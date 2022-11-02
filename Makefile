@@ -1,51 +1,64 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/21 17:28:37 by gfezzuog          #+#    #+#              #
-#    Updated: 2022/10/29 14:05:22 by gfezzuog         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = so_long
 
-SRC = ft_matrix.c \
-	  ft_mapchecker.c \
-	  ft_countinglen.c \
+CC = gcc
 
+CFLAGS = -Wall -Wextra -Werror -g
 
-HDRS = libft.h
+MLX_PATH = mlx/
 
-OBJ = $(SRC:.c=.o)
+MLX_LIB = $(MLX_PATH)libmlx.a
 
-RM = rm -f
+MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 
-%.o: %.c
-	gcc -g -Wall -Wextra -Werror -Imlx -I ${HDRS} -c $< -o $@
+LIBFT_PATH = libft/
 
-$(NAME): $(OBJ)
-	make -C ./libft/ all
-	make -C ./mlx/
-	gcc $(OBJ) -Lmlx -lmlx -framework OpenGL -framework AppKit ./libft/libft.a -o $(NAME)
+Y = "\033[33m"
+R = "\033[31m"
+G = "\033[32m"
+B = "\033[34m"
+X = "\033[0m"
+UP = "\033[A"
+CUT = "\033[K"
 
-all: $(NAME)
+CFILES = ft_countinglen.c ft_mapchecker.c ft_mapchecker2.c ft_matrix.c \
 
-ex: $(NAME)
-	./$(NAME) maps/map2.ber
-	make clean
-	make -C ./mlx/ clean
+OBJECTS = $(CFILES:.c=.o)
+
+all: libraries $(NAME)
+
+%.o : %.c
+	@echo $(Y)Compiling [$<]...$(X)
+	@$(CC) $(CFLAGS) -Imlx -c -o $@ $<
+	@printf $(UP)$(CUT)
+
+libraries:
+	@echo $(B)
+	@make -s -C $(MLX_PATH) all
+	@echo $(B)
+	make -C $(LIBFT_PATH) all
+
+$(NAME): $(OBJECTS)
+	@echo $(Y)Compiling [$(CFILES)]...$(X)
+	@echo $(G)Finished [$(CFILES)]$(X)
+	@echo
+	@echo $(Y)Compiling [$(NAME)]...$(X)
+	@$(CC) $(CFLAGS) $(MLX_FLAGS) $(MLX_LIB) $(LIBFT_LIB) $(OBJECTS) -o $(NAME)
+	@echo $(G)Finished [$(NAME)]$(X)
 
 clean:
-	${RM} $(OBJ)
-	make -C ./mlx/ clean
+	@make -C $(MLX_PATH) clean
+	@rm -f $(OBJECTS)
+	@echo $(R)Removed [$(OBJECTS)]$(X)
 
 fclean: clean
-	${RM} $(NAME) ${OBJ}
-	make -C ./mlx/ clean
+	@make -C $(MLX_PATH) clean
+	@make -C $(LIBFT_PATH) fclean
+	@rm -f $(NAME)
+	@echo $(R)Removed [$(NAME)]$(X)
 
-re: $(NAME)
+re: fclean all
 
-.PHONY: all clean fclean re
+norm:
+	norminette $(LIBFT_PATH) $(CFILES)
+
+.PHONY: all clean fclean re norm
