@@ -6,34 +6,33 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:56:07 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/02 19:08:49 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/03 03:31:41 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_rightlength(t_map map)
+int	ft_right_quantity(t_map map)
 {
 	map.cols = 0;
 	map.rows = 0;
+
 	while (map.cols < map.height)
 	{
-		while (map.map[map.cols][map.rows])
+		while (map.rows < map.length)
+		{
+			if (map.map[map.cols][map.rows] == 'C')
+				map.c++;
+			if (map.map[map.cols][map.rows] == 'E')
+				map.e++;
+			if (map.map[map.cols][map.rows] == 'P')
+				map.p++;
 			map.rows++;
-		if (map.rows != map.length)
-			return (0);
+		}
 		map.rows = 0;
 		map.cols++;
 	}
-	return (1);
-}
-
-int	ft_rightheight(t_map map)
-{
-	map.cols = 0;
-	while (map.map[map.cols])
-		map.cols++;
-	if (map.cols != map.height)
+	if (map.c == 0 || map.e == 0 || map.p == 0)
 		return (0);
 	return (1);
 }

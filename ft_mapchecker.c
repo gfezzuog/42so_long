@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:48:07 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/02 19:08:18 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/03 03:27:57 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int	ft_firstpillar(t_map map)
 {
 	map.rows = 0;
 	map.cols = 0;
-
 	while (map.cols < map.height)
 	{
 		if (map.map[map.cols][map.rows] != '1')
@@ -57,7 +56,6 @@ int	ft_firstpillar(t_map map)
 int	ft_lastpillar(t_map map)
 {
 	map.cols = 0;
-
 	while (map.cols < map.height)
 	{
 		if (map.map[map.cols][map.length - 1] != '1')
@@ -69,51 +67,25 @@ int	ft_lastpillar(t_map map)
 
 int	ft_mapchecker(t_map map)
 {
+	if (ft_firstpillar(map) == 1 && ft_lastrow(map) == 1)
+		printf("raws are closed\n");
+	else
+		printf("raws are not closed\n");
 	if (ft_firstpillar(map) == 1 && ft_lastpillar(map) == 1)
-	{
 		printf("pillars are closed\n");
-		return (1);
-	}
 	else
-	{
 		printf("pillars are not closed\n");
-		return (0);
-	}
-	if (ft_rightlength(map) == 1)
-	{
-		printf("length is right\n");
-		return (1);
-	}
-	else
-	{
-		printf("length is not right\n");
-		return (0);
-	}
-	if (ft_rightheight(map) == 1)
-	{
-		printf("height is right\n");
-		return (1);
-	}
-	else
-	{
-		printf("height is not right\n");
-		return (0);
-	}
+
 	if (ft_rightobj(map) == 1)
-	{
 		printf("objects are right\n");
-		return (1);
-	}
 	else
-	{
 		printf("objects are not right\n");
-		return (0);
-	}
+	if (ft_right_quantity(map) == 1)
+		printf("quantity is right\n");
+	else
+		printf("quantity is not right\n");
 	return (1);
 }
-
-
-
 
 //int	ft_checkrows(t_map map)
 // {

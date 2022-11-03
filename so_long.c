@@ -6,22 +6,34 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:57:44 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/10/26 17:14:02 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/03 03:47:15 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_image create_player(void *mlx, char *path)
-{
-    t_image img;
-    img.size->x = 64;
-    img.size->y = 64;
-    img.pointer = mlx_xpm_file_to_image(mlx, path, &img.size->x, &img.size->y);
-    img.pixels = mlx_get_data_addr(img.pointer, &img.bits_per_pixel, &img.line_length, &img.endian);
-    return (img);
-}
+// t_image create_player(void *mlx, char *path)
+// {
+//     t_image img;
+//     img.size->x = 64;
+//     img.size->y = 64;
+//     img.pointer = mlx_xpm_file_to_image(mlx, path, &img.size->x, &img.size->y);
+//     img.pixels = mlx_get_data_addr(img.pointer, &img.bits_per_pixel, &img.line_length, &img.endian);
+//     return (img);
+// }
 
+int	main(int argc, char **argv)
+{
+	t_map	map;
+
+	if (argc != 2)
+	{
+		printf("Error: Wrong number of arguments\n");
+		return (0);
+	}
+	map = ft_matrix_hendler(argv);
+	return (0);
+}
 // int main(void)
 // {
 //     t_image  img;
