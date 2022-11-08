@@ -6,7 +6,7 @@
 #    By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 17:28:37 by gfezzuog          #+#    #+#              #
-#    Updated: 2022/11/08 18:34:39 by gfezzuog         ###   ########.fr        #
+#    Updated: 2022/11/08 20:02:39 by gfezzuog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ clean:
 
 fclean: clean
 	${RM} $(NAME) ${OBJ}
-	make -C ./libft/ clean
+	make -C ./libft/ fclean
 	make -C ./mlx/ clean
 
 re: $(NAME)
