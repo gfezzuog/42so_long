@@ -6,7 +6,7 @@
 #    By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 17:28:37 by gfezzuog          #+#    #+#              #
-#    Updated: 2022/11/08 17:37:05 by gfezzuog         ###   ########.fr        #
+#    Updated: 2022/11/08 18:34:39 by gfezzuog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,30 +27,29 @@ OBJ = $(SRC:.c=.o)
 RM = rm -f
 
 %.o: %.c
-	gcc -g -Wall -Wextra -Werror -I ${HDRS} -c $< -o $@
+	gcc -g -Wall -Wextra -Werror -Imlx -I ${HDRS} -c $< -o $@
 
 $(NAME): $(OBJ)
 	make -C ./libft/ all
-#	make -C ./mlx/
-	gcc  $(OBJ) ./libft/libft.a -o $(NAME)
-#	 -Lmlx -lmlx -framework OpenGL -framework AppKit
+	make -C ./mlx/
+	gcc  $(OBJ) ./libft/libft.a -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 all: $(NAME)
 
 ex: $(NAME)
-#	./$(NAME) maps/map2.ber
-#	make clean
-#	make -C ./mlx/ clean
+	./$(NAME) maps/map2.ber
+	make clean
+	make -C ./mlx/ clean
 
 clean:
 	${RM} $(OBJ)
 	make -C ./libft/ clean
-#	make -C ./mlx/ clean
+	make -C ./mlx/ clean
 
 fclean: clean
 	${RM} $(NAME) ${OBJ}
 	make -C ./libft/ clean
-#	make -C ./mlx/ clean
+	make -C ./mlx/ clean
 
 re: $(NAME)
 

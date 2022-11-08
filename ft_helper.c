@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:48:11 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/08 17:36:02 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:25:48 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	count_collectibles(t_map map)
 {
 	int	collectibles;
 
+	collectibles = 0;
 	map.rows = 0;
 	map.cols = 0;
 	while (map.cols < map.height)
@@ -27,6 +28,7 @@ int	count_collectibles(t_map map)
 			map.rows++;
 		}
 		map.rows = 0;
+		map.cols++;
 	}
 	return (collectibles);
 }
