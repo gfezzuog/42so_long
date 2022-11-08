@@ -6,7 +6,7 @@
 #    By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 17:28:37 by gfezzuog          #+#    #+#              #
-#    Updated: 2022/11/03 03:46:17 by gfezzuog         ###   ########.fr        #
+#    Updated: 2022/11/08 17:37:05 by gfezzuog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC = so_long.c \
 	  ft_mapchecker.c \
 	  ft_countinglen.c \
 	  ft_mapchecker2.c \
+	  ft_helper.c \
 
 
 HDRS = libft.h

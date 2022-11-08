@@ -6,14 +6,12 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:33:36 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/03 03:51:12 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:47:25 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
-
-
 
 char	**ft_create_matrix(char *string, t_map map)
 {
@@ -62,20 +60,3 @@ t_map	ft_matrix_hendler(char **argv)
 	close(fd);
 	return (map);
 }
-	// map.map = malloc(sizeof(char *) * map.height + 1);
-	// while (map.rows < map.height)
-	// {
-	// 	map.map[map.rows] = malloc(sizeof(char) * map.length + 1);
-	// 	map.rows++;
-	// }
-
-	// while (map.rows < ft_count_rows(argv[1]))
-	// {
-	// 	while (map.map[map.rows][map.cols])
-	// 	{
-	// 		printf("%c", map.map[map.rows][map.cols]);
-	// 		map.cols++;
-	// 	}
-	// 	map.cols = 0;
-	// 	map.rows++;
-	// }

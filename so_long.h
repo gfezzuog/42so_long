@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:59:45 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/03 03:43:47 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:36:49 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,6 @@ int		ft_count_rows(char *string);
 int		ft_right_quantity(t_map map);
 int		ft_rightobj(t_map map);
 t_map	ft_matrix_hendler(char **argv);
+int		ft_count_collectibles(t_map map);
+
 #endif
