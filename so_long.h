@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:59:45 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/11 12:07:00 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:24:03 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,18 @@
 # include "./libft/includes/get_next_line.h"
 # include "./libft/includes/ft_printf.h"
 
+typedef enum s_keys
+{
+	ESC = 53,
+	KEY_UP = 13,
+	KEY_DOWN = 1,
+	KEY_LEFT = 0,
+	KEY_RIGHT = 2,
+	ARROW_UP = 126,
+	ARROW_DOWN = 125,
+	ARROW_LEFT = 123,
+	ARROW_RIGHT = 124,
+}	t_keys;
 
 typedef struct s_map
 {
@@ -28,6 +40,8 @@ typedef struct s_map
 	int		p;
 	int		c;
 	int		e;
+	int		px;
+	int		py;
 }	t_map;
 
 typedef struct s_vector
@@ -78,5 +92,13 @@ t_map	ft_matrix_hendler(char **argv);
 int		ft_count_collectibles(t_map map);
 void	ft_printmap(void *mlx, void *win, t_obj obj, t_map map);
 void	ft_printingfloor(void *mlx, void *win, t_obj obj, t_map map);
+int		ft_keypress(int keycode, t_game *game);
+void	ft_moveup(t_map *map, t_game *game);
+void	ft_movedown(t_map *map, t_game *game);
+void	ft_moveleft(t_map *map, t_game *game);
+void	ft_moveright(t_map *map, t_game *game);
+t_map	ft_findplayer(t_map map);
+int		move_helper(t_map *map, t_game *game);
+
 
 #endif

@@ -6,7 +6,7 @@
 #    By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 17:28:37 by gfezzuog          #+#    #+#              #
-#    Updated: 2022/11/11 12:08:49 by gfezzuog         ###   ########.fr        #
+#    Updated: 2022/11/16 17:52:01 by gfezzuog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SRC = so_long.c \
 	  ft_mapchecker2.c \
 	  ft_helper.c \
 	  ft_printing.c \
+	  ft_movements.c \
+	  ft_movements2.c \
 
 
 HDRS = libft.h
@@ -28,7 +30,7 @@ OBJ = $(SRC:.c=.o)
 RM = rm -f
 
 %.o: %.c
-	gcc -g -Wall -Wextra -Werror -Imlx -I ${HDRS} -c $< -o $@
+	gcc -g -Wall -Werror -Imlx -I ${HDRS} -c $< -o $@
 
 $(NAME): $(OBJ)
 	make -C ./libft/ all
