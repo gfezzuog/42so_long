@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:57:44 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/11 12:00:22 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:23:47 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,24 +49,21 @@ t_obj	ft_chargetexture(void *mlx)
 	return (obj);
 }
 
-
 int	main(int argc, char **argv)
 {
 	t_game	game;
-	t_obj	obj;
-	t_map	map;
 
 	if (argc != 2)
 	{
 		printf("Error: Wrong number of arguments\n");
 		return (0);
 	}
-	map = ft_matrix_hendler(argv);
+	game.map = ft_matrix_hendler(argv);
 	game.mlx = mlx_init();
-	game.win = mlx_new_window(game.mlx, 1920, 1080, "so_long");
-	obj = ft_chargetexture(game.mlx);
-	game.obj = obj;
-	ft_printmap(game.mlx, game.win, obj, map);
+	game.win = mlx_new_window(game.mlx, game.map.length * 64,
+			game.map.height * 64, "so_long");
+	game.obj = ft_chargetexture(game.mlx);
+	ft_printmap(game.mlx, game.win, game.obj, game.map);
 	mlx_loop(game.mlx);
 	return (0);
 }
