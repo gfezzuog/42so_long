@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:00:26 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/21 13:42:09 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:05:56 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,6 @@ void	ft_create_enemy(void *mlx, void *win, t_obj obj, t_map map)
 {
 	map.rows = 0;
 	map.cols = 0;
-	if (obj.fire > 2)
-	{
-		ft_createfloortoenemy(mlx, win, obj, map);
-		obj.fire = 0;
-	}
-	printf("enemy: %d\n", obj.fire);
 	while (map.cols < map.height)
 	{
 		while (map.rows < map.length)

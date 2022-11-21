@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:43:42 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/21 13:23:39 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:01:05 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ void	check_opening(t_map *map, t_game *game)
 {
 	map->opening = 0;
 	*map = find_exit(map);
+	if (game->obj.fire > 2)
+	{
+		ft_createfloortoenemy(game->mlx, game->win, game->obj, game->map);
+		game->obj.fire = 0;
+	}
 	if (count_collectibles(*map) == 0)
 	{
 		mlx_put_image_to_window(game->mlx, game->win,

@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:59:45 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/21 13:41:47 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:59:41 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,6 @@ t_map	ft_findplayer(t_map map);
 int		move_helper(t_map *map, t_game *game);
 void	check_opening(t_map *map, t_game *game);
 void	ft_create_enemy(void *mlx, void *win, t_obj obj, t_map map);
+void	ft_createfloortoenemy(void *mlx, void *win, t_obj obj, t_map map);
 
 #endif
