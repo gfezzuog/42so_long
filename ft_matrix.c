@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:33:36 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/16 17:55:26 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:45:21 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_map	ft_matrix_hendler(char **argv)
 	i = ft_mapchecker(map);
 	if (i == 0)
 	{
-		ft_printf("Error");
+		ft_printf("Error\n");
 		exit(0);
 	}
 	close(fd);

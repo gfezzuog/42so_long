@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:59:45 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/16 18:24:03 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:41:47 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,14 @@ typedef struct s_map
 	int		cols;
 	int		length;
 	int		height;
-	int		p;
 	int		c;
 	int		e;
+	int		p;
 	int		px;
 	int		py;
+	int		ex;
+	int		ey;
+	int		opening;
 }	t_map;
 
 typedef struct s_vector
@@ -71,6 +74,7 @@ typedef struct s_obj
 	t_image	fire1;
 	t_image	fire2;
 	t_image	fire3;
+	int		fire;
 }	t_obj;
 
 typedef struct s_game
@@ -99,6 +103,7 @@ void	ft_moveleft(t_map *map, t_game *game);
 void	ft_moveright(t_map *map, t_game *game);
 t_map	ft_findplayer(t_map map);
 int		move_helper(t_map *map, t_game *game);
-
+void	check_opening(t_map *map, t_game *game);
+void	ft_create_enemy(void *mlx, void *win, t_obj obj, t_map map);
 
 #endif

@@ -6,11 +6,12 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:24:33 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/16 18:26:22 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:38:52 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
 void	ft_printopen(t_map *map, t_game game)
 {
 	map->cols = 0;
@@ -20,24 +21,14 @@ void	ft_printopen(t_map *map, t_game game)
 		while (map->rows < map->length)
 		{
 			if (map->map[map->cols][map->rows] == 'E')
-				mlx_put_image_to_window(game.mlx, game.win, game.obj.exit2.pointer,
-					map->rows * 64, map->cols * 64);
+				mlx_put_image_to_window(game.mlx, game.win,
+					game.obj.exit2.pointer, map->rows * 64, map->cols * 64);
 		}
 	}
 }
 
-int	move_helper(t_map *map, t_game *game)
-{
-	if (map->map[map->py][map->px] == 'C')
-		map->c--;
-	if (map->c == 0)
-		ft_printopen(map, *game);
-	return (0);
-}
-
 int	ft_keypress(int keycode, t_game *game)
 {
-	printf("game->map.px: %d\n", game->map.px);
 	if (keycode == ESC)
 		exit(0);
 	if (keycode == KEY_UP || keycode == ARROW_UP)

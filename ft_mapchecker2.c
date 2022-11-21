@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:56:07 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/16 16:26:18 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:09:29 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int	ft_rightobj(t_map map)
 				&& map.map[map.cols][map.rows] != '0'
 				&& map.map[map.cols][map.rows] != 'C'
 				&& map.map[map.cols][map.rows] != 'E'
-				&& map.map[map.cols][map.rows] != 'P')
+				&& map.map[map.cols][map.rows] != 'P'
+				&& map.map[map.cols][map.rows] != 'N')
 				return (0);
 			map.rows++;
 		}
