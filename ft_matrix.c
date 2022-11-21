@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:33:36 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/21 12:45:21 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:24:25 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ char	**ft_create_matrix(char *string, t_map map)
 	while (i < ft_count_rows(string))
 	{
 		map.map[i] = row;
+		printf("string%s\n", map.map[i]);
 		row = get_next_line(fd, 1);
 		i++;
 	}
+	free(row);
+	print(map);
 	return (map.map);
 }
 
@@ -61,6 +64,7 @@ t_map	ft_matrix_hendler(char **argv)
 	if (i == 0)
 	{
 		ft_printf("Error\n");
+		ft_freematrix(map);
 		exit(0);
 	}
 	close(fd);

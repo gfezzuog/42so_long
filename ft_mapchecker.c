@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:48:07 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/08 16:47:56 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 16:51:17 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,23 @@ int	ft_lastpillar(t_map map)
 		map.cols++;
 	}
 	return (1);
+}
+
+void	print(t_map map)
+{
+	map.cols = 0;
+	map.rows = 0;
+	while (map.cols < map.height)
+	{
+		while (map.rows < map.length)
+		{
+			printf("%c", map.map[map.cols][map.rows]);
+			map.rows++;
+		}
+		printf("\n");
+		map.rows = 0;
+		map.cols++;
+	}
 }
 
 int	ft_mapchecker(t_map map)

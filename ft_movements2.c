@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:36:27 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/21 14:06:12 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:32:00 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,9 @@ void	ft_moveup(t_map *map, t_game *game)
 {
 	check_opening(map, game);
 	if (map->map[map->py - 1][map->px] == 'E' && map->opening == 1)
-	{
-		exit (0);
-		return ;
-	}
+		ft_freematrix(game->map);
 	if (map->map[map->py - 1][map->px] == 'N')
-		exit(0);
+		ft_freematrix(game->map);
 	if (map->map[map->py - 1][map->px] == '1'
 		|| (map->map[map->py - 1][map->px] == 'E' && map->opening == 0))
 		return ;
@@ -41,12 +38,9 @@ void	ft_movedown(t_map *map, t_game *game)
 {
 	check_opening(map, game);
 	if (map->map[map->py + 1][map->px] == 'E' && map->opening == 1)
-	{
-		exit (0);
-		return ;
-	}
+		ft_freematrix(game->map);
 	if (map->map[map->py + 1][map->px] == 'N')
-		exit(0);
+		ft_freematrix(game->map);
 		map->map[map->py][map->px] = '0';
 	if (map->map[map->py + 1][map->px] == '1'
 		|| (map->map[map->py + 1][map->px] == 'E' && map->opening == 0))
@@ -67,12 +61,9 @@ void	ft_moveleft(t_map *map, t_game *game)
 {
 	check_opening(map, game);
 	if (map->map[map->py][map->px - 1] == 'E' && map->opening == 1)
-	{
-		exit(0);
-		return ;
-	}
+		ft_freematrix(game->map);
 	if (map->map[map->py][map->px - 1] == 'N')
-		exit(0);
+		ft_freematrix(game->map);
 	if (map->map[map->py][map->px - 1] == '1'
 		|| (map->map[map->py][map->px - 1] == 'E' && map->opening == 0))
 		return ;
@@ -92,12 +83,9 @@ void	ft_moveright(t_map *map, t_game *game)
 {
 	check_opening(map, game);
 	if (map->map[map->py][map->px + 1] == 'E' && map->opening == 1)
-	{
-		exit(0);
-		return ;
-	}
+		ft_freematrix(game->map);
 	if (map->map[map->py][map->px + 1] == 'N')
-		exit(0);
+		ft_freematrix(game->map);
 	if (map->map[map->py][map->px + 1] == '1'
 		|| (map->map[map->py][map->px + 1] == 'E' && map->opening == 0))
 		return ;

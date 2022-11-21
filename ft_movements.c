@@ -6,11 +6,25 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:24:33 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/21 12:38:52 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:29:48 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_freematrix(t_map map)
+{
+	int	i;
+
+	i = 0;
+	while (i < map.height)
+	{
+		free(map.map[i]);
+		i++;
+	}
+	free(map.map);
+	exit(0);
+}
 
 void	ft_printopen(t_map *map, t_game game)
 {
@@ -30,7 +44,10 @@ void	ft_printopen(t_map *map, t_game game)
 int	ft_keypress(int keycode, t_game *game)
 {
 	if (keycode == ESC)
+	{
+		ft_freematrix(game->map);
 		exit(0);
+	}
 	if (keycode == KEY_UP || keycode == ARROW_UP)
 		ft_moveup(&game->map, game);
 	if (keycode == KEY_DOWN || keycode == ARROW_DOWN)
