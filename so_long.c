@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:57:44 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:43 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:25:18 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 	game.obj = ft_chargetexture(game.mlx);
 	game.moves = 0;
 	ft_printmap(game.mlx, game.win, game.obj, game.map);
+	mlx_string_put(game.mlx, game.win, 10, 10, 0x00FFFFFF, "Moves: ");
 	mlx_hook(game.win, 2, 1L << 0, ft_keypress, &game);
 	mlx_loop(game.mlx);
 	return (0);
