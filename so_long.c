@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:57:44 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/22 18:25:18 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:33:19 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,7 @@ int	main(int argc, char **argv)
 	ft_printmap(game.mlx, game.win, game.obj, game.map);
 	mlx_string_put(game.mlx, game.win, 10, 10, 0x00FFFFFF, "Moves: ");
 	mlx_hook(game.win, 2, 1L << 0, ft_keypress, &game);
+	mlx_hook(game.win, 17, 1L << 17, ft_close, &game);
 	mlx_loop(game.mlx);
 	return (0);
 }
-// int main(void)
-// {
-//     t_image  img;
-//     void    *mlx;
-//     void    *win;
-
-//     mlx = mlx_init();
-//     win = mlx_new_window(mlx, 1920, 1080, "test");
-//     img = create_player(mlx, "./player/player.xpm");
-//     mlx_put_image_to_window(game->mlx, game->win, img.pointer, 0, 0);
-//     mlx_loop(mlx);
-// }
