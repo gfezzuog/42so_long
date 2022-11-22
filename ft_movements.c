@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:24:33 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/21 17:29:48 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:06:16 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	ft_printopen(t_map *map, t_game game)
 
 int	ft_keypress(int keycode, t_game *game)
 {
+	ft_writemoves(game);
 	if (keycode == ESC)
 	{
 		ft_freematrix(game->map);

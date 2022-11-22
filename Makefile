@@ -6,7 +6,7 @@
 #    By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 17:28:37 by gfezzuog          #+#    #+#              #
-#    Updated: 2022/11/18 18:53:37 by gfezzuog         ###   ########.fr        #
+#    Updated: 2022/11/21 17:42:46 by gfezzuog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC = so_long.c \
 	  ft_printing.c \
 	  ft_movements.c \
 	  ft_movements2.c \
+	  ft_createblack.c \
 
 
 HDRS = libft.h

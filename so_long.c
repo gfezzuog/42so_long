@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:57:44 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/21 13:02:58 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:05:43 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	main(int argc, char **argv)
 	game.win = mlx_new_window(game.mlx, game.map.length * 64,
 			game.map.height * 64, "so_long");
 	game.obj = ft_chargetexture(game.mlx);
+	game.moves = 0;
 	ft_printmap(game.mlx, game.win, game.obj, game.map);
 	mlx_hook(game.win, 2, 1L << 0, ft_keypress, &game);
 	mlx_loop(game.mlx);

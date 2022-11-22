@@ -6,7 +6,7 @@
 /*   By: gfezzuog <gfezzuog@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:05:03 by gfezzuog          #+#    #+#             */
-/*   Updated: 2022/11/21 16:49:54 by gfezzuog         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:36:12 by gfezzuog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	ft_strlengnl(char *string)
 	line = get_next_line(fd, 1);
 	i = ft_strlen(line);
 	free(line);
-	printf("srlen%d\n", i);
 	close (fd);
 	return (i);
 }
@@ -44,6 +43,5 @@ int	ft_count_rows(char *string)
 	}
 	free(line);
 	close (fd);
-	printf("rows%d\n", rows);
 	return (rows);
 }
